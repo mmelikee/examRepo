@@ -3,7 +3,8 @@
 char    *ft_strdup(char *src)
 {
     int i = 0;
-    char *res = malloc(i+1);
+    char *res;
+    res = malloc(i+1);
     if(!res)
         return NULL;
     i = 0;

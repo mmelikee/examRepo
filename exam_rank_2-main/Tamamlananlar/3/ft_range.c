@@ -18,4 +18,4 @@ int	*ft_range(int start, int end)
 		i++;
 	}
 	return res;
- 
+}

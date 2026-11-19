@@ -155,3 +155,41 @@ char *ft_itoa(int nbr)
     }
     return(res);
 }
+
+int basamak(int a)
+{
+    int i = 0;
+    if(a < 0)
+    {
+        a = a * -1;
+        i++;
+    }
+    while (a > 0)
+    {
+        a = a / 10;
+        i++;
+    }
+    return(i + 1);
+}
+
+char *ft_itoa(int nbr)
+{
+    int i = basamak(nbr);
+    char *res;
+    res = malloc(i + 1);
+    if(nbr == 0)
+        res[0] = '\0';
+    if(nbr < 0)
+    {
+        res[0] = '-';
+        nbr = nbr * -1;
+    }
+    i--;
+    while (nbr > 0)
+    {
+        res[i] = (nbr % 10) + '0';
+        nbr = nbr / 10;
+        i--;
+    }
+    return(res);
+}
